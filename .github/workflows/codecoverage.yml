@@ -39,4 +39,4 @@ jobs:
       with:
           custom-title: Coverage Report for API
           skip-step: all
-          coverage-file: coverage/report.json
+          coverage-file: coverage/coverage-final.json
