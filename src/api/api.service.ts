@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Student } from '../student/student.service';
-import {HttpService} from '@nestjs/axios';
+import { HttpService } from '@nestjs/axios';
 
 @Injectable()
 export class ApiService {
