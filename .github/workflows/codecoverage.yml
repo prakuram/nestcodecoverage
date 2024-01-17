@@ -3,6 +3,11 @@
 
 name: Code Coverage
 
+permissions:
+  contents: write
+  pull-requests: write
+  checks: write
+
 on:
   push:
     branches: [ "master" ]
