@@ -33,7 +33,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
         
-     # typescript check requires api dependencies
     - name: Install dependencies for projects
       run: yarn install
         
@@ -42,6 +41,7 @@ jobs:
       
     - uses: ArtiomTr/jest-coverage-report-action@v2
       with:
+          github-token: ${{ secrets.SECRET_TOKEN }}
           custom-title: Coverage Report for API
           skip-step: all
           coverage-file: ./coverage/coverage-final.json
