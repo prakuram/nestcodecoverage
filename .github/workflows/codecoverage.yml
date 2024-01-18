@@ -45,7 +45,7 @@ jobs:
             custom-title: Coverage Report for API
             skip-step: all
             output: comment, report-markdown
-            coverage-file: ./coverage/report.json
-            base-coverage-file: ./coverage/report.json # this line added
+            coverage-file: ./coverage/coverage-final.json
+            base-coverage-file: ./coverage/coverage-final.json
             threshold: 90
             annotations: coverage
