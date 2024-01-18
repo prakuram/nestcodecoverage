@@ -2,6 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { StudentService } from './student/student.service';
+import { HttpException} from '@nestjs/common';
 
 describe('AppController', () => {
   let appController: AppController;
@@ -34,6 +35,12 @@ describe('AppController', () => {
       const secondName = 'Foo';
       appController.getStudentGpa(firstName, secondName);
       expect(spyService.getGpa).toHaveBeenCalled();
+    });
+    it('should give exception', async () => {
+      const firstName = 'Joe';
+      const secondName = '';
+      await expect(appController.getStudentGpa(firstName, secondName))
+      .rejects.toThrow(HttpException);
     });
   });
 

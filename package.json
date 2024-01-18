@@ -15,7 +15,7 @@
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:cov": "jest --coverage",
+    "test:cov": "jest --coverage --json --testLocationInResults --outputFile=coverage/report.json",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
@@ -41,7 +41,7 @@
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
-    "jest": "^29.5.0",
+    "jest": "^29.7.0",
     "prettier": "^3.0.0",
     "source-map-support": "^0.5.21",
     "supertest": "^6.3.3",
@@ -65,9 +65,24 @@
     "collectCoverageFrom": [
       "**/*.(t|j)s"
     ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "main.ts",
+      "\\.dto\\.ts$",
+      "\\.module\\.ts$",
+      "/jest/"
+    ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node",
-    "collectCoverage": true,
-    "verbose": true
+    "coverageReporters": ["clover", "json", "lcov", ["text", { "skipFull": true }]],
+    "coverageProvider": "babel",
+    "coverageThreshold": {
+      "global": {
+        "statements": 84,
+        "branches": 65.7,
+        "functions": 82.6,
+        "lines": 83.5
+      }
+    }
   }
 }
