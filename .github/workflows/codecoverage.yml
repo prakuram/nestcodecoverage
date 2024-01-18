@@ -41,6 +41,7 @@ jobs:
           if: always()
           uses: ArtiomTr/jest-coverage-report-action@v2
           with:
+            package-manager: yarn
             prnumber: ${{ steps.findPr.outputs.number }}
             custom-title: Coverage Report for API
             skip-step: all
