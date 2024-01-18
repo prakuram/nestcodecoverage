@@ -68,6 +68,16 @@
     "coverageDirectory": "../coverage",
     "testEnvironment": "node",
     "collectCoverage": true,
-    "verbose": true
+    "verbose": true,
+    "coverageReporters": ["clover", "json", "lcov", ["text", { "skipFull": true }]],
+    "coverageProvider": "babel",
+    "coverageThreshold": {
+      "global": {
+        "statements": 84,
+        "branches": 65.7,
+        "functions": 82.6,
+        "lines": 83.5
+      }
+    }
   }
 }
