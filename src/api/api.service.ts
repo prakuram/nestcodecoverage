@@ -11,8 +11,4 @@ export class ApiService {
     const response = await this.http.get(url).toPromise();
     return response.data;
   }
-
-  getHello(): string {
-    return 'Hello World!';
-  }
 }

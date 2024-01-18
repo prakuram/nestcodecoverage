@@ -65,6 +65,13 @@
     "collectCoverageFrom": [
       "**/*.(t|j)s"
     ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "main.ts",
+      "\\.dto\\.ts$",
+      "\\.module\\.ts$",
+      "/jest/"
+    ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node",
     "coverageReporters": ["clover", "json", "lcov", ["text", { "skipFull": true }]],
