@@ -44,5 +44,8 @@ jobs:
             prnumber: ${{ steps.findPr.outputs.number }}
             custom-title: Coverage Report for API
             skip-step: all
-            coverage-file: ./coverage/coverage-final.json
             output: comment, report-markdown
+            coverage-file: ./coverage/report.json
+            base-coverage-file: ./coverage/report.json # this line added
+            threshold: 90
+            annotations: coverage
